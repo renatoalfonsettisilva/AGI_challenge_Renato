@@ -1,0 +1,22 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+driver = webdriver.Chrome()
+
+url = "https://blogdoagi.com.br/page/2/?s=dinheiro"
+
+driver.get(url)
+
+wait = WebDriverWait(driver, 10)
+
+links_paginacao = driver.find_elements_by_css_selector(".pagination li a")
+
+for link_pagina in links_paginacao:
+    link_pagina.click()
+    
+    wait.until(EC.staleness_of(link_pagina))
+    
+driver.quit()

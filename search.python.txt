@@ -1,0 +1,20 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+driver = webdriver.Chrome()
+
+url = "https://blogdoagi.com.br/?s="
+
+driver.get(url)
+
+campo_busca = driver.find_element_by_css_selector("input[name='search']")
+
+termo_pesquisa = "Seguro"
+campo_busca.send_keys(termo_pesquisa)
+
+campo_busca.send_keys(Keys.RETURN)
+
+time.sleep(2)
+
+driver.quit()

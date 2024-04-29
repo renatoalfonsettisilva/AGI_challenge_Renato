@@ -1,0 +1,25 @@
+Article Search Test:
+Feature: Article Search
+
+Scenario: Verify search functionality
+Given the user is on the blog's home page
+When the user enters the search term in the search field
+Then the search results should be displayed correctly
+
+Scenario: Confirm relevance of search results
+Given the user has performed a search on the blog
+When the user examines the search results
+Then the results should match the search criteria
+
+Article Display Test:
+Feature: Article Display
+
+Scenario: Verify correct display of articles after search
+Given the user has performed a search and accessed a specific article
+When the user views the article
+Then the title, author, publication date, and content of the article should be displayed correctly
+
+Scenario: Navigate through different result pages
+Given the user has performed a search and there are multiple result pages
+When the user navigates through the result pages
+Then the results on each page should be displayed correctly
